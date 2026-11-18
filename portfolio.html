@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mamadou Diallo – Développeur web full stack et gaming</title>
+<meta name="description" content="Portfolio de Mamadou Diallo, étudiant en Master en conception et développement d’applications web full stack et gaming à Thiès.">
+<meta name="theme-color" content="#0B1020">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0B1020;
+  --panel: #111936;
+  --line: #1E2A4A;
+  --text: #F1F5F9;
+  --muted: #94A3B8;
+  --accent: #22D3EE;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+/* En-tête */
+header.top { padding: 20px 0; border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.logo { font-family: var(--mono); font-weight: 700; color: var(--accent); text-decoration: none; }
+nav a { margin-left: 20px; color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--text); }
+
+/* Hero */
+.hero { padding: clamp(56px, 12vw, 128px) 0 clamp(40px, 8vw, 80px); }
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 12vw, 7.5rem);
+  line-height: .95;
+  letter-spacing: -.03em;
+}
+.hero h1 span { display: block; color: var(--accent); }
+.hero p.role { max-width: 34em; margin: 32px 0 0; font-size: clamp(1.05rem, 2.4vw, 1.3rem); color: var(--muted); }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: 8px; font-weight: 700;
+  text-decoration: none; border: 2px solid var(--accent);
+}
+.btn.primary { background: var(--accent); color: var(--bg); }
+.btn.primary:hover { background: var(--text); border-color: var(--text); }
+.btn.ghost { color: var(--accent); }
+.btn.ghost:hover { background: var(--panel); }
+
+/* Sections */
+section { padding: clamp(40px, 8vw, 72px) 0; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 8px; font-size: clamp(1.6rem, 4vw, 2.2rem); letter-spacing: -.01em; }
+.lead { margin: 0 0 32px; color: var(--muted); max-width: 40em; }
+
+/* Compétences : bloc de code */
+.editor { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.editor .bar { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: .8rem; color: var(--muted); }
+.editor .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.editor pre { margin: 0; padding: 24px; overflow-x: auto; font-family: var(--mono); font-size: clamp(.8rem, 2.4vw, 1rem); line-height: 1.8; tab-size: 2; }
+.k { color: var(--accent); }      /* mots-clés et clés */
+.s { color: var(--text); }        /* chaînes */
+.p { color: var(--muted); }       /* ponctuation */
+
+/* Contact */
+.contact-list { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 12px; }
+.contact-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 12px; align-items: baseline; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.contact-list .label { font-family: var(--mono); color: var(--accent); }
+.contact-list a { text-decoration: none; overflow-wrap: anywhere; }
+.contact-list a:hover { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+
+footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+
+@media (max-width: 520px) {
+  nav a { margin-left: 14px; }
+  .contact-list li { grid-template-columns: 1fr; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">&lt;MD /&gt;</a>
+    <nav aria-label="Navigation principale">
+      <a href="#competences">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <h1>Mamadou <span>Diallo</span></h1>
+      <p class="role">Étudiant en Master en conception et développement d’applications web full stack et gaming, à Thiès.</p>
+      <div class="actions">
+        <a class="btn primary" href="#contact">Me contacter</a>
+        <a class="btn ghost" href="#competences">Voir mes compétences</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="competences">
+    <div class="wrap">
+      <h2>Compétences</h2>
+      <p class="lead">Les langages et outils que j’utilise pour construire des applications web et des jeux.</p>
+
+      <!-- À MODIFIER : adaptez la liste à vos vraies compétences -->
+      <div class="editor" role="group" aria-label="Liste de compétences sous forme de code">
+        <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span>competences.js</span></div>
+<pre><code><span class="k">const</span> <span class="s">mamadou</span> <span class="p">=</span> <span class="p">{</span>
+  <span class="k">frontend</span><span class="p">:</span> <span class="p">[</span><span class="s">"HTML"</span><span class="p">,</span> <span class="s">"CSS"</span><span class="p">,</span> <span class="s">"JavaScript"</span><span class="p">,</span> <span class="s">"React"</span><span class="p">],</span>
+  <span class="k">backend</span><span class="p">:</span>  <span class="p">[</span><span class="s">"Node.js"</span><span class="p">,</span> <span class="s">"SQL"</span><span class="p">],</span>
+  <span class="k">gaming</span><span class="p">:</span>   <span class="p">[</span><span class="s">"C++"</span><span class="p">,</span> <span class="s">"OpenGL"</span><span class="p">],</span>
+  <span class="k">outils</span><span class="p">:</span>   <span class="p">[</span><span class="s">"Git"</span><span class="p">,</span> <span class="s">"GitHub"</span><span class="p">,</span> <span class="s">"Canva"</span><span class="p">],</span>
+<span class="p">};</span></code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="lead">Un stage, une collaboration ou une question : écrivez-moi ou appelez-moi.</p>
+      <ul class="contact-list">
+        <li><span class="label">Téléphone</span><a href="tel:776904998">77 690 49 98</a></li>
+        <li><span class="label">E-mail</span><a href="mailto:mamadoudiallo2664@gmail.com">mamadoudiallo2664@gmail.com</a></li>
+        <li><span class="label">Adresse</span><span>Thiès, Sénégal</span></li>
+      </ul>
+      <a class="btn primary" href="mailto:mamadoudiallo2664@gmail.com">Écrire un e-mail</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Mamadou Diallo</div>
+</footer>
+
+</body>
+</html>
